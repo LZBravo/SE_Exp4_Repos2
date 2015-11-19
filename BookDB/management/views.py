@@ -69,3 +69,5 @@ def delete(req):
 	book_to_delete = Book.objects.get(ISBN = isbn)
 	book_to_delete.delete()
 	return HttpResponseRedirect(req.META.get('HTTP_REFERER', '/'))
+
+# EOF
