@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>图书数据库BookDB</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+		<div align="center">
+			<h1>图书数据库BookDB</h1>
+		</div>
+		<div>
+			<h3>输入作者姓名，查询所著书目</h3>
+		</div>
+		<form method="post">
+			{% csrf_token %}
+			<tr>
+				<td><input name="name" type="text"></td>
+				<td><input type="submit" value="查找"></td>
+			</tr>
+		</form>
+		<div>
+			<h3>查询结果</h3>
+		</div>
+		{% for book in book_list %}
+		<div>
+			·<a href="/view_info/?isbn={{book.ISBN}}" target="_blank">{{book.Title}}</a> | <a href="/del/?isbn={{book.ISBN}}">删除</a>
+		</div>
+		{% endfor %}
+		<div></div>
+		<div>
+			<h3></h3>
+			<h3>或者你想</h3>
+			<a href="/add_book/">添加一本书</a>
+		</div>
+	</body>
+</html>

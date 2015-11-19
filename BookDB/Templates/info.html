@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>《{{book.Title}}》信息查询</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+		<div align="center">
+			<h1>图书数据库BookDB - 《{{book.Title}}》信息查询</h1>
+		</div>
+		<div align="center">
+			<h3>《{{book.Title}}》书籍信息</h3>
+		</div>
+		<table border=1 align="center">
+			<tr>
+				<th>ISBN</th><th>书籍名称</th><th>作者</th><th>出版社</th><th>出版时间</th><th>价格</th>
+			</tr>
+			<tr>
+				<td>{{book.ISBN}}</td><td>{{book.Title}}</td><td>{{author.Name}}</td><td>{{book.Publisher}}</td><td>{{book.PublishDate}}</td><td>{{book.Price}}</td>
+			</tr>
+		</table>
+		<div align="center">
+			<h3>《{{book.Title}}》作者信息</h3>
+		</div>
+		<table border=1 align="center">
+			<tr>
+				<th>姓名</th><th>年龄</th><th>国籍</th>
+			</tr>
+			<tr>
+				<td>{{author.Name}}</td><td>{{author.Age}}</td><td>{{author.Country}}</td>
+			</tr>
+		</table>
+	</body>
+</html>

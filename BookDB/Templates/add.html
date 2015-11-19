@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>添加书目</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+		<div align="right">
+			<a href="/">返回主页</a>
+		</div>
+		<div align="center">
+			<h1>图书数据库BookDB - 添加书目</h1>
+		</div>
+		<form method="post">
+			{% csrf_token %}
+			<div>
+				<h3>ISBN</h3>
+			</div>
+			<div>
+				<input name="isbn" type="text" maxlength="100">
+			</div>
+			<div>
+				<h3>书名</h3>
+			</div>
+			<div>
+				<input name="title" type="text" maxlength="100">
+			</div>
+			<div>
+				<h3>出版社</h3>
+			</div>
+			<div>
+				<input name="publisher" type="text" maxlength="60">
+			</div>
+			<div>
+				<h3>出版时间</h3>
+			</div>
+			<div>
+				<input name="publishdate" type="text" maxlength="8">
+			</div>
+			<div>
+				<h3>价格</h3>
+			</div>
+			<div>
+				<input name="price" type="text" maxlength="8">
+			</div>
+			<div>
+				<h3>作者</h3>
+			</div>
+			{% for author in author_list %}
+			<div>
+				<input name="authorid" type="radio" value="{{author.AuthorID}}">{{author.Name}}
+			</div>
+			{% endfor %}
+			<div>
+				<input name="authorid" type="radio" value="N" checked="checked">新的作者
+			</div>
+			<div>
+				姓名<input name="name" type="text" maxlength="30">
+			</div>
+			<div>
+				年龄<input name="age" type="text" maxlength="3">
+			</div>
+			<div>
+				国籍<input name="country" type="text" maxlength="30">
+			</div>
+			<div>
+				<input type="submit" value="提交"> | <input type="reset" value="重填">
+			</div>
+	</body>
+</html>
